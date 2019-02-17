@@ -25,7 +25,8 @@
                         <form method="POST" class="register-form" id="register-form" action="<?php echo base_url('Login/signup');?>">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                <input type="text" name="name" id="name" value="<?php echo set_value('name');?>" placeholder="Your Name"/>
+                                <p><?php echo form_error('name');?></p>
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
@@ -33,17 +34,26 @@
 								<p><?php echo form_error('email');?></p>
                             </div>
                             <div class="form-group">
+                                <label for="phone"><i class="zmdi zmdi-phone"></i></label>
+								<input type="tel" name="phone" id="phone" value="<?php echo set_value('phone');?>"placeholder="Your Phone"/ >
+								<p><?php echo form_error('phone');?></p>
+                            </div>
+                            <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <input type="password" name="pass" id="pass"  value="<?php echo set_value('pass');?>" placeholder="Password"/>
+                                <p><?php echo form_error('pass');?></p>
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+                                <input type="password" name="re_pass" id="re_pass" value="<?php echo set_value('re_pass');?>" placeholder="Repeat your password"/>
+                                <p><?php echo form_error('re_pass');?></p>
                             </div>
+                            
                             <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required />
+                                <label for="agree-term" class="label-agree-term" ><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
+                            
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
                             </div>
